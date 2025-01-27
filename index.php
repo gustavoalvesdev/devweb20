@@ -2,13 +2,7 @@
 
 require 'Pessoa.php';
 require 'Funcionario.php';
-
-$pessoa = new Pessoa();
-//echo Pessoa::apresentarPessoa();
-
-$pessoa->setNome('Gustavo');
-$pessoa->setIdade(33);
-//echo 'Meu nome é ' . $pessoa->getNome() . ' e eu tenho ' . $pessoa->getIdade() . ' anos';
+require 'Cliente.php';
 
 $funcionario = new Funcionario();
 
@@ -17,4 +11,11 @@ $funcionario->setCargo('Eletricista');
 $funcionario->setIdade(55);
 $funcionario->setSalario(3200.00);
 
-echo 'Olá, meu nome é ' . $funcionario->getNome() . ', eu tenho ' . $funcionario->getIdade() . ' anos e eu trabalhando como ' . $funcionario->getCargo() . ', ganhando R$ ' . $funcionario->getSalario(); 
+// echo 'Olá, meu nome é ' . $funcionario->getNome() . ', eu tenho ' . $funcionario->getIdade() . ' anos e eu trabalhando como ' . $funcionario->getCargo() . ', ganhando R$ ' . $funcionario->getSalario(); 
+
+$cliente = new Cliente();
+
+$cliente->setNome('Fernando');
+$cliente->setLimiteDeCredito(2000.50);
+
+echo 'Olá, meu nome é ' . $cliente->getNome() . ' e meu limite de crédito é de R$ ' . $cliente->getLimiteDeCredito();
