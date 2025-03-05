@@ -1,21 +1,24 @@
 <?php 
 
-require 'Pessoa.php';
-require 'Funcionario.php';
-require 'Cliente.php';
+interface DankiInterface {
+    public function getNome();
+    public function setNome($nome);
+}
 
-$funcionario = new Funcionario();
+class DankiCode implements DankiInterface {
 
-$funcionario->setNome('Luiz');
-$funcionario->setCargo('Eletricista');
-$funcionario->setIdade(55);
-$funcionario->setSalario(3200.00);
+    private $nome;
 
-// echo 'Olá, meu nome é ' . $funcionario->getNome() . ', eu tenho ' . $funcionario->getIdade() . ' anos e eu trabalhando como ' . $funcionario->getCargo() . ', ganhando R$ ' . $funcionario->getSalario(); 
+    public function getNome() {
+        return $this->nome;
+    }
 
-$cliente = new Cliente();
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
 
-$cliente->setNome('Fernando');
-$cliente->setLimiteDeCredito(2000.50);
+}
 
-echo 'Olá, meu nome é ' . $cliente->getNome() . ' e meu limite de crédito é de R$ ' . $cliente->getLimiteDeCredito();
+$danki = new DankiCode();
+$danki->setNome('Gustavo');
+print 'Nome: ' . $danki->getNome();
